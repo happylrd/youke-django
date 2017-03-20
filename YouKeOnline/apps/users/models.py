@@ -1,3 +1,5 @@
+# coding=utf-8
+from __future__ import unicode_literals
 from datetime import datetime
 
 from django.db import models
@@ -16,7 +18,7 @@ class UserProfile(AbstractUser):
         verbose_name = '用户信息'
         verbose_name_plural = verbose_name
 
-    def __str__(self):
+    def __unicode__(self):
         return self.username
 
 
