@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.shortcuts import render
 from django.views.generic import View
-from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
+from pure_pagination import Paginator, PageNotAnInteger
 
 from .models import Course
 
@@ -34,4 +34,21 @@ class CourseListView(View):
             'all_courses': courses,
             'sort': sort,
             'hot_courses': hot_courses
+        })
+
+
+class CourseDetailView(View):
+    """
+    课程详情页
+    """
+
+    def get(self, request, course_id):
+        course = Course.objects.get(id=int(course_id))
+
+        # 增加课程点击数
+        course.click_nums += 1
+        course.save()
+
+        return render(request, 'course-detail.html', {
+            'course': course
         })
