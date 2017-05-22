@@ -24,3 +24,4 @@ A naive mooc platform.
   - Some Tools
     - [virtualenv](https://github.com/pypa/virtualenv)
     - [virtualenvwrapper-win](https://github.com/davidmarble/virtualenvwrapper-win)
+  - [video.js](https://github.com/videojs/video.js)
